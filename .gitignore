@@ -1,0 +1,15 @@
+# IDE
+.vscode/
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+terraform.tfstate
+terraform.tfstate.backup
+
+# macOS
+.DS_Store
+
+# Other
+todos.md
