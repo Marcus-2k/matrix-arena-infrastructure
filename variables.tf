@@ -11,11 +11,7 @@ variable "world_volume" {
   type    = number
 }
 
-variable "ssh_ip" {
-  type = string
-}
-
-variable "s3_bucket" {
+variable "s3_bucket_server_backup" {
   type = string
 }
 
@@ -25,4 +21,9 @@ variable "access_key" {
 
 variable "secret_key" {
   type = string
+}
+
+variable "eip_allocation_id" {
+  type        = string
+  description = "Allocation ID of the existing Elastic IP (e.g., eipalloc-xxxxx)"
 }

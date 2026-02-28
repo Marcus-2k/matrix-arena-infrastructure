@@ -55,14 +55,6 @@ resource "aws_instance" "minecraft_server" {
 }
 
 ############################################
-# Elastic IP
-############################################
-
-resource "aws_eip" "minecraft_eip" {
-  instance = aws_instance.minecraft_server.id
-}
-
-############################################
 # Latest Ubuntu AMI
 ############################################
 
