@@ -11,6 +11,10 @@ variable "world_volume" {
   type    = number
 }
 
+variable "key_pair_name" {
+  type    = string
+}
+
 variable "s3_bucket_server_backup" {
   type = string
 }

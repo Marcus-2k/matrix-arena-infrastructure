@@ -19,9 +19,9 @@ resource "aws_iam_role" "minecraft_role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "minecraft_s3_readonly" {
+resource "aws_iam_role_policy_attachment" "minecraft_s3_full_access" {
   role       = aws_iam_role.minecraft_role.name
-  policy_arn = "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+  policy_arn = "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 }
 
 resource "aws_iam_instance_profile" "minecraft_profile" {
@@ -36,7 +36,7 @@ resource "aws_iam_instance_profile" "minecraft_profile" {
 resource "aws_instance" "minecraft_server" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
-  key_name                    = "access-key"
+  key_name                    = var.key_pair_name
   vpc_security_group_ids      = [aws_security_group.minecraft_sg.id]
   subnet_id                   = aws_subnet.minecraft_subnet.id
   associate_public_ip_address = true
