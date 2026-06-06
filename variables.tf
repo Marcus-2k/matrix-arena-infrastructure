@@ -1,3 +1,11 @@
+variable "environment" {
+  type    = string
+}
+
+variable "project_name" {
+  type    = string
+}
+
 variable "region" {
   type    = string
   default = "eu-central-1"
@@ -13,10 +21,6 @@ variable "world_volume" {
 
 variable "key_pair_name" {
   type    = string
-}
-
-variable "s3_bucket_server_backup" {
-  type = string
 }
 
 variable "access_key" {

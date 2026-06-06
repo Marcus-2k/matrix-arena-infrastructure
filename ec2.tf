@@ -50,7 +50,7 @@ resource "aws_instance" "minecraft_server" {
   user_data = file("user_data.sh")
 
   tags = {
-    Name = "MinecraftServer"
+    Name = "${var.project_name}-${var.environment}-minecraft-server-instance"
   }
 }
 
